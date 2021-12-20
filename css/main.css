@@ -1,0 +1,203 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Base styling */
+
+:root {
+    --primary-font: "PT Sans", sans-serif;
+    --brand-font: "Pacifico", cursive;
+    --bg-color: #264653;
+    --brand-color: #f4a261;
+    --secondary-color: #cbe1ea;
+    --tetriary-color: #e76f51;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: #fff;
+    font-family: var(--primary-font);
+    font-size: 18px;
+    line-height: 1.5;
+    
+}
+
+a {
+    color: #44d4c4;
+    font-weight: 700;
+}
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    a:focus {
+        font-style: italic;
+    }
+
+/* Open Section */
+
+html {
+    overflow: hidden;
+}
+
+main {
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.open {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    scroll-snap-align: end;
+}
+
+    .open_wrapper {
+        text-align: end;
+    }
+
+    .open_title {
+        color: var(--brand-color);
+        font-family: var(--brand-font);
+        font-size: 9rem;
+        margin-bottom: 1rem;
+    }
+
+    .open_subtitle {
+        color: var(--secondary-color);
+        font-size: 1rem;
+        font-style: italic;
+    }
+
+.arrow {
+    bottom: 2.5rem;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
+    .arrow span {
+        animation: animate 2s infinite;
+        border-bottom: 5px solid var(--brand-color);
+        border-right: 5px solid var(--brand-color);
+        display: block;
+        height: 30px;
+        margin: -10px;
+        transform: rotate(45deg);
+        width: 30px;
+    }
+
+        .arrow span:nth-child(2) {
+            animation-delay: -0.2s;
+        }
+        
+        .arrow span:nth-child(3) {
+            animation-delay: -0.4s;
+        }
+
+@keyframes animate {
+    0%{
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px,-20px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(45deg) translate(20px,20px);
+    }
+}
+
+/* About Section */
+
+.about {
+    height: 100vh;
+    padding-block: 3rem;
+    padding-inline: 2rem;
+    scroll-snap-align: start;
+}
+
+.about_wrapper {
+    background-color: rgba(241, 241, 241, 0.1);
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+    .about_wrapper:not(:last-of-type) {
+        margin-bottom: 2rem;
+    }
+
+h3 {
+    color: var(--tetriary-color);
+    font-family: var(--brand-font);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.list {
+    list-style-type: disc;
+    margin-left: 2rem;
+}
+
+    .list_item {
+        margin-block: .5rem;
+    }
+
+        .list_item::marker {
+            color: var(--tetriary-color);
+        }
