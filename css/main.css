@@ -91,10 +91,15 @@ html {
 }
 
 main {
-    scroll-snap-type: y mandatory;
-    overflow-y: auto;
     height: 100vh;
+    overflow-y: auto;
 }
+
+    @media screen and (min-width: 64rem) {
+        main {
+            scroll-snap-type: y mandatory;
+        }
+    }
 
 .open {
     align-items: center;
@@ -103,8 +108,13 @@ main {
     flex-direction: column;
     height: 100%;
     position: relative;
-    scroll-snap-align: end;
 }
+
+    @media screen and (min-width: 64rem) {
+        .open {
+            scroll-snap-align: end;
+        }
+    }
 
     .open_wrapper {
         text-align: end;
@@ -113,8 +123,14 @@ main {
     .open_title {
         color: var(--brand-color);
         font-family: var(--brand-font);
-        font-size: 9rem;
+        font-size: 4rem;
         margin-bottom: 1rem;
+    }
+
+    @media screen and (min-width: 64rem) {
+        .open_title {
+            font-size: 9rem;
+        }
     }
 
     .open_subtitle {
@@ -165,29 +181,45 @@ main {
 /* About Section */
 
 .about {
-    height: 100vh;
     padding-block: 3rem;
-    padding-inline: 2rem;
-    scroll-snap-align: start;
+    padding-inline: 1rem;
 }
+
+    @media screen and (min-width: 64rem) {
+        .about {
+            height: 100vh;
+            padding-inline: 2rem;
+            scroll-snap-align: start;
+        }
+    }
 
 .about_wrapper {
     background-color: rgba(241, 241, 241, 0.1);
     max-width: 860px;
-    margin: 0 auto;
-    padding: 2rem;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.2rem;
 }
 
-    .about_wrapper:not(:last-of-type) {
-        margin-bottom: 2rem;
+    @media screen and (min-width: 64rem) {
+        .about_wrapper {
+            padding: 2rem;
+        }
     }
 
 h3 {
     color: var(--brand-color);
     font-family: var(--brand-font);
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 1.5rem;
 }
+
+    @media screen and (min-width: 64rem) {
+        h3 {
+            font-size: 2rem;
+        }
+    }
 
 .list {
     list-style-type: disc;
