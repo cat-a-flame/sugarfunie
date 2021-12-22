@@ -72,7 +72,7 @@ body {
 }
 
 a {
-    color: #44d4c4;
+    color: #7bfff0;
     font-weight: 700;
 }
 
@@ -183,7 +183,7 @@ main {
     }
 
 h3 {
-    color: var(--tetriary-color);
+    color: var(--brand-color);
     font-family: var(--brand-font);
     font-size: 2rem;
     margin-bottom: 1.5rem;
